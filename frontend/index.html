@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Desk — Cybersecurity Incident Reporting &amp; Tracking</title>
+  <meta name="description" content="File, triage, and close out cybersecurity incidents in one centralized case-management system.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container masthead">
+      <div class="masthead-brand">
+        <span class="eyebrow">Security Operations · Case Management</span>
+        <span class="brand-title"><a href="index.html">Incident Desk</a></span>
+      </div>
+      <span class="case-ref">UMT · OSSD · Spring 2025</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-auth-only">Dashboard</a>
+        <a href="report-incident.html" class="nav-auth-only">Report incident</a>
+        <a href="manage-incidents.html" class="nav-auth-only">Manage incidents</a>
+        <span class="nav-spacer"></span>
+        <a href="login.html" class="nav-guest-only">Sign in</a>
+        <a href="register.html" class="nav-guest-only">Register</a>
+        <span class="nav-user nav-auth-only" data-user-name></span>
+        <a href="#" class="nav-auth-only" data-action="logout">Sign out</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <div class="hero-eyebrow">Case No. starts the moment you hit submit</div>
+          <h1>Every incident gets a case number, a clock, and an owner.</h1>
+          <p class="lede">Incident Desk replaces the email chains and shared spreadsheets with one place to file, triage, and close out cybersecurity incidents — from first report to final resolution.</p>
+          <div class="hero-actions">
+            <a href="register.html" class="btn btn-primary">Report an incident</a>
+            <a href="login.html" class="btn btn-secondary">Sign in</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="stamp sev-critical">Critical</span>
+          <h3 class="mt-0" style="margin-top:6px;">Open case log</h3>
+          <div class="log-line"><span class="id">#0192</span><span class="desc">Phishing email to finance distribution list</span><span class="stamp status-open" style="font-size:.6rem;padding:3px 8px;">Open</span></div>
+          <div class="log-line"><span class="id">#0191</span><span class="desc">Unrecognized login, VPN gateway</span><span class="stamp status-progress" style="font-size:.6rem;padding:3px 8px;">In-Progress</span></div>
+          <div class="log-line"><span class="id">#0189</span><span class="desc">Laptop reported lost, disk encrypted</span><span class="stamp status-resolved" style="font-size:.6rem;padding:3px 8px;">Resolved</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="section container">
+        <div class="section-head">
+          <div class="eyebrow">What it replaces</div>
+          <h2>The reporting habits most teams already have — and why they break down</h2>
+          <p>Security incidents still get reported the way everything else does: a Slack message, a forwarded email, a sticky note. None of it survives contact with a second incident.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="file-no">No. 01</span>
+            <h3>Reports scattered everywhere</h3>
+            <p>Email threads, chat messages, and verbal handoffs make it impossible to see every active incident at once.</p>
+          </div>
+          <div class="card">
+            <span class="file-no">No. 02</span>
+            <h3>Status nobody can confirm</h3>
+            <p>Without a shared record, "is this fixed yet?" becomes a question someone has to go ask a person, not a system.</p>
+          </div>
+          <div class="card">
+            <span class="file-no">No. 03</span>
+            <h3>No paper trail when it matters</h3>
+            <p>Audits, post-mortems, and compliance reviews all need a documented history that ad-hoc reporting never produces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What you get</div>
+          <h2>One case file, from report to resolution</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Structured intake</h3>
+            <p>Title, category, severity, and description — every report arrives in the same shape, ready to triage.</p>
+          </div>
+          <div class="card">
+            <h3>Lifecycle tracking</h3>
+            <p>Open, In-Progress, Resolved. Every status change is timestamped and attributed automatically.</p>
+          </div>
+          <div class="card">
+            <h3>Evidence locker</h3>
+            <p>Attach screenshots, logs, and documents directly to the case so proof never lives in a separate inbox.</p>
+          </div>
+          <div class="card">
+            <h3>Search &amp; filter</h3>
+            <p>Find a case by keyword, or narrow the list by category, severity, or status in a couple of clicks.</p>
+          </div>
+          <div class="card">
+            <h3>Dashboard analytics</h3>
+            <p>A live count of total, open, in-progress, and resolved incidents — the state of the desk at a glance.</p>
+          </div>
+          <div class="card">
+            <h3>Role-based access</h3>
+            <p>Employees file reports; analysts and admins triage, reassign, and close them under their own login.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="section container text-center">
+        <h2>Ready to put the next incident on the record?</h2>
+        <p style="max-width:46ch;margin:0 auto 20px;">Registration takes under a minute. Every report is logged, timestamped, and assigned a case number automatically.</p>
+        <a href="register.html" class="btn btn-primary">Create an account</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-note">INCIDENT DESK — Cybersecurity Incident Reporting &amp; Tracking System</span>
+      <span class="footer-note">OSSD Final Project · Phase 2 Build</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

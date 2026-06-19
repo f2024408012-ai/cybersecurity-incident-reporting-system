@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case detail — Incident Desk</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container masthead">
+      <div class="masthead-brand">
+        <span class="eyebrow">Security Operations · Case Management</span>
+        <span class="brand-title"><a href="index.html">Incident Desk</a></span>
+      </div>
+      <span class="case-ref">UMT · OSSD · Spring 2025</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-auth-only">Dashboard</a>
+        <a href="report-incident.html" class="nav-auth-only">Report incident</a>
+        <a href="manage-incidents.html" class="nav-auth-only">Manage incidents</a>
+        <span class="nav-spacer"></span>
+        <a href="login.html" class="nav-guest-only">Sign in</a>
+        <a href="register.html" class="nav-guest-only">Register</a>
+        <span class="nav-user nav-auth-only" data-user-name></span>
+        <a href="#" class="nav-auth-only" data-action="logout">Sign out</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section-tight">
+      <div class="container">
+        <a href="manage-incidents.html" class="btn-ghost" style="font-size:.88rem;">&larr; Back to manage incidents</a>
+
+        <div class="alert alert-error" id="loadError" role="alert">Could not load this case. It may have been deleted.</div>
+
+        <div id="caseContent" style="display:none;">
+          <div class="detail-head" style="margin-top:18px;">
+            <div>
+              <div class="eyebrow"><span class="mono" id="caseId">Case #—</span></div>
+              <h2 class="mt-0" id="caseTitle">—</h2>
+              <div class="detail-meta">
+                <span class="stamp stamp-lg" id="caseSeverity"></span>
+                <span class="stamp stamp-lg" id="caseStatus"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-grid">
+            <div>
+              <div class="card" style="margin-bottom:20px;">
+                <div class="field-block">
+                  <span class="label">Category</span>
+                  <span class="value" id="caseCategory">—</span>
+                </div>
+                <div class="field-block">
+                  <span class="label">Description</span>
+                  <p class="value" id="caseDescription" style="color:var(--ink);">—</p>
+                </div>
+                <div class="field-block">
+                  <span class="label">Reported by</span>
+                  <span class="value" id="caseReporter">—</span>
+                </div>
+                <div class="field-block" style="margin-bottom:0;">
+                  <span class="label">Filed</span>
+                  <span class="value" id="caseCreated">—</span>
+                </div>
+              </div>
+
+              <div class="card admin-only" id="statusCard" style="margin-bottom:20px;">
+                <h3>Update status</h3>
+                <div class="alert" id="statusAlert" role="alert"></div>
+                <div class="field-row">
+                  <div class="field" style="margin-bottom:0;">
+                    <label for="statusSelect">Lifecycle state</label>
+                    <select id="statusSelect">
+                      <option>Open</option>
+                      <option>In-Progress</option>
+                      <option>Resolved</option>
+                    </select>
+                  </div>
+                  <div class="field" style="margin-bottom:0; align-self:end;">
+                    <button class="btn btn-primary btn-block" id="statusSaveBtn">Save status</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3>Evidence</h3>
+                <ul class="evidence-list" id="evidenceList">
+                  <li class="muted">No evidence attached yet.</li>
+                </ul>
+                <form id="evidenceForm" style="margin-top:16px;">
+                  <div class="file-drop">
+                    <input type="file" id="evidenceFile" accept=".png,.jpg,.jpeg,.pdf">
+                  </div>
+                  <button type="submit" class="btn btn-secondary btn-block" style="margin-top:12px;">Attach evidence</button>
+                </form>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <h3>Activity log</h3>
+                <div class="timeline" id="activityTimeline">
+                  <div class="timeline-item"><span class="ts">—</span><div class="action muted">No activity recorded yet.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-note">INCIDENT DESK — Cybersecurity Incident Reporting &amp; Tracking System</span>
+      <span class="footer-note">OSSD Final Project · Phase 2 Build</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/incident-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in — Incident Desk</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container masthead">
+      <div class="masthead-brand">
+        <span class="eyebrow">Security Operations · Case Management</span>
+        <span class="brand-title"><a href="index.html">Incident Desk</a></span>
+      </div>
+      <span class="case-ref">UMT · OSSD · Spring 2025</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-auth-only">Dashboard</a>
+        <a href="report-incident.html" class="nav-auth-only">Report incident</a>
+        <a href="manage-incidents.html" class="nav-auth-only">Manage incidents</a>
+        <span class="nav-spacer"></span>
+        <a href="login.html" class="nav-guest-only">Sign in</a>
+        <a href="register.html" class="nav-guest-only">Register</a>
+        <span class="nav-user nav-auth-only" data-user-name></span>
+        <a href="#" class="nav-auth-only" data-action="logout">Sign out</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section-tight">
+      <div class="container">
+        <div class="form-sheet form-sheet-narrow">
+          <span class="stamp status-open" style="margin-bottom:14px;">Access log</span>
+          <h2>Sign in</h2>
+          <p style="margin-bottom:24px;">Enter your credentials to open the dashboard.</p>
+
+          <div class="alert" id="formAlert" role="alert"></div>
+
+          <form id="loginForm" novalidate>
+            <div class="field" id="field-email">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <div class="error-msg">Enter your email address.</div>
+            </div>
+
+            <div class="field" id="field-password">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" autocomplete="current-password" required>
+              <div class="error-msg">Enter your password.</div>
+            </div>
+
+            <div class="field">
+              <label class="checkbox-row"><input type="checkbox" id="rememberMe"> Remember me on this device</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Sign in</button>
+          </form>
+
+          <p class="form-footer-link">New here? <a href="register.html">Create an account</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-note">INCIDENT DESK — Cybersecurity Incident Reporting &amp; Tracking System</span>
+      <span class="footer-note">OSSD Final Project · Phase 2 Build</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

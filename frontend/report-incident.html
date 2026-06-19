@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an incident — Incident Desk</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container masthead">
+      <div class="masthead-brand">
+        <span class="eyebrow">Security Operations · Case Management</span>
+        <span class="brand-title"><a href="index.html">Incident Desk</a></span>
+      </div>
+      <span class="case-ref">UMT · OSSD · Spring 2025</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-auth-only">Dashboard</a>
+        <a href="report-incident.html" class="nav-auth-only">Report incident</a>
+        <a href="manage-incidents.html" class="nav-auth-only">Manage incidents</a>
+        <span class="nav-spacer"></span>
+        <a href="login.html" class="nav-guest-only">Sign in</a>
+        <a href="register.html" class="nav-guest-only">Register</a>
+        <span class="nav-user nav-auth-only" data-user-name></span>
+        <a href="#" class="nav-auth-only" data-action="logout">Sign out</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section-tight">
+      <div class="container">
+        <div class="form-sheet" style="max-width:680px;margin:0 auto;">
+          <span class="stamp sev-high" style="margin-bottom:14px;">New report</span>
+          <h2>Report a security incident</h2>
+          <p style="margin-bottom:24px;">Fill in what you know — you can add evidence files now or attach them later from the case detail page.</p>
+
+          <div class="alert" id="formAlert" role="alert"></div>
+
+          <form id="reportForm" novalidate>
+            <div class="field" id="field-title">
+              <label for="title">Incident title</label>
+              <input type="text" id="title" name="title" placeholder="e.g. Suspicious login attempt on staging server" required>
+              <div class="error-msg">Give the incident a short, descriptive title.</div>
+            </div>
+
+            <div class="field-row">
+              <div class="field" id="field-category">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                  <option value="" disabled selected>Select a category</option>
+                  <option>Phishing</option>
+                  <option>Malware</option>
+                  <option>Unauthorized Access</option>
+                  <option>Ransomware</option>
+                  <option>Data Breach</option>
+                  <option>Network Intrusion</option>
+                  <option>Other</option>
+                </select>
+                <div class="error-msg">Choose a category.</div>
+              </div>
+
+              <div class="field" id="field-severity">
+                <label for="severity">Severity</label>
+                <select id="severity" name="severity" required>
+                  <option value="" disabled selected>Select a severity</option>
+                  <option>Low</option>
+                  <option>Medium</option>
+                  <option>High</option>
+                  <option>Critical</option>
+                </select>
+                <div class="error-msg">Choose a severity level.</div>
+              </div>
+            </div>
+
+            <div class="field" id="field-description">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" placeholder="What happened, when you noticed it, and anything else you observed." required></textarea>
+              <div class="error-msg">Describe what happened.</div>
+            </div>
+
+            <div class="field">
+              <label for="evidence">Evidence (optional)</label>
+              <div class="file-drop">
+                <input type="file" id="evidence" name="evidence" accept=".png,.jpg,.jpeg,.pdf">
+                <p style="margin:8px 0 0;">Accepts <strong>PNG, JPG, or PDF</strong>. Attached after the case is created.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Submit report</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-note">INCIDENT DESK — Cybersecurity Incident Reporting &amp; Tracking System</span>
+      <span class="footer-note">OSSD Final Project · Phase 2 Build</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/report.js"></script>
+</body>
+</html>

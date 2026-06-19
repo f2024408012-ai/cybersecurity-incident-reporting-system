@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage incidents — Incident Desk</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container masthead">
+      <div class="masthead-brand">
+        <span class="eyebrow">Security Operations · Case Management</span>
+        <span class="brand-title"><a href="index.html">Incident Desk</a></span>
+      </div>
+      <span class="case-ref">UMT · OSSD · Spring 2025</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-auth-only">Dashboard</a>
+        <a href="report-incident.html" class="nav-auth-only">Report incident</a>
+        <a href="manage-incidents.html" class="nav-auth-only">Manage incidents</a>
+        <span class="nav-spacer"></span>
+        <a href="login.html" class="nav-guest-only">Sign in</a>
+        <a href="register.html" class="nav-guest-only">Register</a>
+        <span class="nav-user nav-auth-only" data-user-name></span>
+        <a href="#" class="nav-auth-only" data-action="logout">Sign out</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section-tight">
+      <div class="container">
+        <div class="detail-head">
+          <div>
+            <div class="eyebrow">Case register</div>
+            <h2 class="mt-0">Manage incidents</h2>
+          </div>
+          <a href="report-incident.html" class="btn btn-primary">Report incident</a>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-field">
+            <input type="text" id="searchInput" placeholder="Search by title or description…">
+          </div>
+          <select id="filterCategory">
+            <option value="">All categories</option>
+            <option>Phishing</option>
+            <option>Malware</option>
+            <option>Unauthorized Access</option>
+            <option>Ransomware</option>
+            <option>Data Breach</option>
+            <option>Network Intrusion</option>
+            <option>Other</option>
+          </select>
+          <select id="filterSeverity">
+            <option value="">All severities</option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+            <option>Critical</option>
+          </select>
+          <select id="filterStatus">
+            <option value="">All statuses</option>
+            <option>Open</option>
+            <option>In-Progress</option>
+            <option>Resolved</option>
+          </select>
+          <button class="btn btn-secondary btn-sm" id="clearFiltersBtn">Clear</button>
+        </div>
+
+        <div class="alert alert-error" id="listError" role="alert">Could not load incidents.</div>
+
+        <div class="ledger-wrap">
+          <table class="ledger">
+            <thead>
+              <tr>
+                <th>Case</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Severity</th>
+                <th>Status</th>
+                <th>Reported by</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="incidentsBody">
+              <tr><td colspan="8" class="muted">Loading incidents…</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <h3>No matching incidents</h3>
+          <p>Try clearing your search or filters.</p>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="editModalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 class="mt-0">Edit case <span id="editIncidentId" class="mono muted"></span></h3>
+        <button class="modal-close" id="editModalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="alert" id="editAlert" role="alert"></div>
+      <form id="editForm">
+        <div class="field">
+          <label for="editTitle">Title</label>
+          <input type="text" id="editTitle" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="editCategory">Category</label>
+            <select id="editCategory">
+              <option>Phishing</option>
+              <option>Malware</option>
+              <option>Unauthorized Access</option>
+              <option>Ransomware</option>
+              <option>Data Breach</option>
+              <option>Network Intrusion</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="editSeverity">Severity</label>
+            <select id="editSeverity">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="editStatus">Status</label>
+          <select id="editStatus">
+            <option>Open</option>
+            <option>In-Progress</option>
+            <option>Resolved</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="editDescription">Description</label>
+          <textarea id="editDescription" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="editSubmitBtn">Save changes</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-note">INCIDENT DESK — Cybersecurity Incident Reporting &amp; Tracking System</span>
+      <span class="footer-note">OSSD Final Project · Phase 2 Build</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/incidents.js"></script>
+</body>
+</html>
